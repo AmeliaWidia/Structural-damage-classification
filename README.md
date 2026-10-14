@@ -53,9 +53,8 @@ nepal-damage-classification/
 ## Interpretasi hasil
 
 - Baseline terbaik: LightGBM
-- Baseline Macro F1: 
-- Final validation Macro F1:
-- Parameter terbaik:
-- CV Macro F1:
-- Interpretasi confusion matrix:
-- Skor Kaggle:
+- Baseline Macro F1: 0.5214
+- Final validation Macro F1: 0.5279
+- Parameter terbaik: n_estimator: 150, num_leaves:50
+- Skor Kaggle: 0.53149
+
