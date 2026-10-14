@@ -1,6 +1,15 @@
 # Nepal Damage Classification
 
-Project supervised machine learning untuk memprediksi `damage_grade` pada data bangunan. Metrik evaluasi utama adalah **Macro F1**. Tidak menggunakan model neural network.
+Project supervised machine learning untuk memprediksi `damage_grade` pada data bangunan. Metrik evaluasi utama adalah **Macro F1**. 
+
+Metode yang digunakan:
+- Linear Discriminant Analysis
+- Support Vector Machine
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- XGBoost
+- LightGBM
 
 ## Struktur Repository
 
