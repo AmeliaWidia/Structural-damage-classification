@@ -46,15 +46,9 @@ nepal-damage-classification/
 
 ## Scripts
 
-`preprocess.py` berisi fungsi loading, pemisahan fitur-target, casting ID geografis, pembuatan preprocessor, dan normalisasi label. `train.py` berisi factory model, training/evaluasi baseline, dan helper GridSearchCV. `predict.py` berisi helper simpan/muat model, prediksi, pembuatan submission, validasi, dan penyimpanan CSV. Notebook asli dipertahankan supaya visualisasi, urutan analisis, dan fitur tidak berkurang.
-
-## Ketentuan repository
-
-- Dataset CSV dikecualikan dari Git dengan `data/*.csv`.
-- Model pickle dan submission yang dihasilkan juga tidak di-commit secara default.
-- Semua fungsi di scripts dilengkapi docstring.
-- Gunakan Pipeline dan ColumnTransformer untuk preprocessing.
-- Tidak menggunakan neural network.
+`preprocess.py` berisi fungsi loading, pemisahan fitur-target, casting ID geografis, pembuatan preprocessor, dan normalisasi label. 
+`train.py` berisi factory model, training/evaluasi baseline, dan helper GridSearchCV. 
+`predict.py` berisi helper simpan/muat model, prediksi, pembuatan submission, validasi, dan penyimpanan CSV. 
 
 ## Interpretasi hasil
 
