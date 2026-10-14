@@ -25,7 +25,9 @@ nepal-damage-classification/
 │   ├── train.py
 │   └── predict.py
 ├── models/
+│   └── best_model.pkl
 ├── submissions/
+│   └── submission.csv
 └── reports/
     └── figures/
 ```
