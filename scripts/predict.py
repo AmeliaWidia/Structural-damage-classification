@@ -1,3 +1,4 @@
+"""Prediction, model persistence, and submission helpers."""
 from pathlib import Path
 import pickle
 import pandas as pd
@@ -6,6 +7,7 @@ from scripts.preprocess import normalize_grade_labels
 
 
 def save_model_bundle(path, bundle):
+    """Persist the trained model bundle using pickle."""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("wb") as file:
@@ -14,11 +16,13 @@ def save_model_bundle(path, bundle):
 
 
 def load_model_bundle(path):
+    """Load a model bundle yang disave dgn pickle."""
     with Path(path).open("rb") as file:
         return pickle.load(file)
 
 
 def predict_labels(model, model_name, X_eval, label_encoder=None):
+    """Predict label dan decode hasil XGBoost jika diperlukan."""
     predictions = np.asarray(model.predict(X_eval))
     if model_name == "XGBoost":
         if label_encoder is None:
@@ -28,6 +32,7 @@ def predict_labels(model, model_name, X_eval, label_encoder=None):
 
 
 def create_submission(sample_submission, test, predictions, target="damage_grade", id_column="building_id"):
+    """Isi template submission sample dan periksa urutan ID test/submission."""
     if target not in sample_submission.columns:
         raise ValueError(f"Target column {target!r} not found in sample submission.")
     if len(sample_submission) != len(predictions) or len(test) != len(predictions):
@@ -43,6 +48,7 @@ def create_submission(sample_submission, test, predictions, target="damage_grade
 
 
 def validate_submission(submission, sample_submission, train, target="damage_grade"):
+    """Validate submission schema."""
     if list(submission.columns) != list(sample_submission.columns):
         raise ValueError("Submission columns differ from the sample template.")
     if len(submission) != len(sample_submission):
@@ -57,6 +63,7 @@ def validate_submission(submission, sample_submission, train, target="damage_gra
 
 
 def save_submission(submission, path):
+    """Save the submission as CSV."""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     submission.to_csv(path, index=False)
