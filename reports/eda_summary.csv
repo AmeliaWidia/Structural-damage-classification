@@ -1,0 +1,9 @@
+metric,value
+train_rows,533465
+train_columns,17
+test_rows,228629
+test_columns,16
+target_classes,5
+duplicate_train_rows,0
+missing_train_cells,0
+missing_test_cells,0

@@ -1,0 +1,17 @@
+# Dataset
+data/*.csv
+
+# Model hasil training
+models/*.pkl
+models/*.joblib
+
+# Hasil submission
+submissions/*.csv
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Secrets
+.env
